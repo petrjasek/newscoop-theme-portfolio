@@ -1,15 +1,24 @@
 {{ extends file="./layout.tpl" }}
 
 {{ block content }}
-<section class="span11">
+{{ set_section number=4 }}
+{{ list_articles order="bySectionOrder asc" }}
+{{ if $gimme->current_list->at_beginning }}
+<section class="span3">
     <ul class="featured">
-        {{ list_playlist_articles name="featured" }}
-        <li><a href="{{ uri options="article" }}" title="{{ $gimme->article->title|escape }}">
+{{ /if }}
+        <li>
             {{ image rendition="front" }}
-            <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="" />
+            <figure>
+                <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="" />
+            </figure>
             {{ /image }}
-        </a></li>
-        {{ /list_playlist_articles }}
+            <h2>{{ $gimme->article->title|escape }}</h2>
+            <div class="lead">{{ $gimme->article->lead }}</div>
+        </li>
+    {{ if $gimme->current_list->at_end }}
     </ul>
 </section>
+{{ /if }}
+{{ /list_articles }}
 {{ /block }}

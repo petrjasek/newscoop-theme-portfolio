@@ -14,7 +14,7 @@ a {
 }
 
 header > nav {
-    padding-top: 23px;
+    padding-top: 25px;
 }
 
 nav ul {
@@ -156,9 +156,55 @@ section, article {
 }
 
 .filter a {
-    background-color: #d5d5d5;
+    background-color: #999;
 }
 
 .filter strong {
     background-color: #000;
+}
+
+.featured {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 1%;
+    overflow: hidden;
+}
+
+.featured > li {
+    float: left;
+    margin: 0;
+    padding: 13px;
+    background-color: #f5f5f5;
+    border: 1px solid #fff;
+    border-width: 0 1px 1px 0;
+}
+
+.featured figure {
+    margin: 0;
+}
+
+.featured h2 {
+}
+
+.featured .lead {
+    margin: 0;
+}
+
+.featured .lead p {
+    margin: 0;
+}
+
+.kontakt aside {
+}
+
+.kontakt aside > p {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.kontakt aside strong {
+    font-weight: normal;
+    font-family: 'RobotoBold', sans-serif;
 }

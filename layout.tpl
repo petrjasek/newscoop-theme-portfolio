@@ -2,17 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>{{ block title }}Andrea Kubná{{ /block }} | kubna.cz</title>
+    <title>{{ block title }}ANDREA KUBNA ARCHITEKT{{ /block }} @ kubna.cz</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/bootstrap/css/bootstrap.min.css" }}" />
+    <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/bootstrap/css/bootstrap-responsive.min.css" }}" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/fonts/stylesheet.css" }}" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/style.css" }}" />
 </head>
-<body>
+<body class="{{ $gimme->section->url_name|escape }}">
     <div class="container-fluid">
         <header class="row-fluid">
             <div class="span3">
-                <a href="/" id="logo">ANDREA KUBNA<br /><span>ARCHITEKT</span></a>
+                {{ capture name="logo" }}
+                <img src="{{ uri static_file="static/logo.png" }}" width="126" height="43" alt="ANDREA KUBNA ARCHITEKT" />
+                {{ /capture }}
+                {{ if $gimme->section->defined }}
+                <a href="{{ uri options="root_level" }}" id="logo" title="ANDREA KUBNA ARCHITEKT">{{ $smarty.capture.logo }}</a>
+                {{ else }}
+                <h1 id="logo">{{ $smarty.capture.logo }}</h1>
+                {{ /if }}
             </div>
             <nav class="span8">
                 <ul>
