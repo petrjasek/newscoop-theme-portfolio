@@ -10,4 +10,10 @@
 		<articlePage src="article.tpl"/>
 		<errorPage src="404.tpl"/>
 	</output>
+
+    <renditions>
+        <rendition name="section" width="300" height="300" specs="crop" />
+        <rendition name="front" width="500" height="333" specs="crop" />
+        <rendition name="detail" width="800" height="533" specs="crop" />
+    </renditions>
 </theme>

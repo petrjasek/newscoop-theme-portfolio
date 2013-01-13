@@ -1,0 +1,164 @@
+body {
+    font-family: 'RobotoRegular', sans-serif;
+    color: #000;
+    background-color: #fff;
+}
+
+header {
+    padding: 13px 0;
+    background-color: #fff;
+}
+
+a {
+    color: #000;
+}
+
+header > nav {
+    padding-top: 23px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    height: 1%;
+}
+
+nav li {
+    float: left;
+    margin: 0;
+    padding: 0 34px 0 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'RobotoLight', sans-serif;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+#logo {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: 'RobotoBold', sans-serif;
+    color: #000;
+}
+
+#logo span {
+    font-weight: normal;
+    font-size: 24px;
+    font-family: 'RobotoLight', sans-serif;
+}
+
+ul.projects {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 1%;
+    overflow: hidden;
+}
+
+.projects > li {
+    float: left;
+    margin: 0;
+    padding: 13px;
+    border: 1px solid #fff;
+    border-width: 0 1px 1px 0;
+    background-color: #f5f5f5;
+}
+
+.projects h3 {
+    margin: 8px 0 3px;
+    font-size: 16px;
+    font-family: 'RobotoBold', sans-serif;
+    font-weight: normal;
+    line-height: 18px;
+}
+
+.projects p {
+    margin: 0;
+    color: #414141;
+    font-size: 13px;
+    font-family: 'RobotoLight', sans-serif;
+}
+
+.projects a:hover * {
+    color: #000;
+    text-decoration: none;
+}
+
+aside.images {
+}
+
+aside.images > img {
+    margin-bottom: 1px;
+}
+
+article {
+    padding: 13px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 28px;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: 'RobotoBold', sans-serif;
+}
+
+dl.meta {
+    font-size: 13px;
+}
+
+.meta > dt {
+    float: left;
+    font-weight: normal;
+    color: #666;
+}
+
+.meta > dd {
+    margin-left: 33%;
+}
+
+.lead, .body {
+    line-height: 18px;
+    font-size: 13px;
+}
+
+section, article {
+}
+
+.filter {
+    height: 1%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 0 13px;
+    list-style-type: none;
+}
+
+.filter > li {
+    float: left;
+    margin: 0 1px 0 0;
+    padding: 0;
+}
+
+.filter a, .filter strong {
+    display: inline-block;
+    padding: 5px;
+    color: #fff;
+}
+
+.filter a {
+    background-color: #d5d5d5;
+}
+
+.filter strong {
+    background-color: #000;
+}
