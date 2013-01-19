@@ -1,8 +1,9 @@
 {{ extends file="./layout.tpl" }}
 
-{{ block title }}{{ $gimme->section->name }}{{ /block }}
+{{ block "title" }}{{ $gimme->section->name }}{{ /block }}
 
-{{ block content }}
+{{ block "content" }}
+
 {{ if $gimme->section->url_name == "kontakt" }}
 {{ list_articles }}
 <aside class="span3">
@@ -14,7 +15,7 @@
 {{ /list_articles }}
 
 {{ else }}
-<aside class="span3">
+<aside class="pull-right">
     {{ $filters = ['t' => ['projekt', 'realizace', 'soutěž'], 'y' => range(date('Y'), 2009)] }}
     {{ foreach $filters as $param => $options }}
         {{ $query = $smarty.get }}
@@ -41,7 +42,7 @@
     </ul>
     {{ /foreach }}
 </aside>
-<section class="span8">
+<section>
     <ul class="projects">
         {{ $where = array() }}
 
@@ -65,5 +66,5 @@
     </ul>
 </section>
 {{ /if }}
-
 {{ /block }}
+
