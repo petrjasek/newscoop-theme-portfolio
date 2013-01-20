@@ -1,80 +1,66 @@
 body {
-    font-family: 'RobotoRegular', sans-serif;
     color: #000;
     background-color: #fff;
+    font-family: 'RobotoRegular', sans-serif;
 }
+
+a { color: #000; }
+
+img { border: none; }
+
+figure { margin: 0; }
 
 header {
     padding: 13px 0 8px;
-    background-color: #fff;
 }
 
-a {
-    color: #000;
+header nav {
+    padding-top: 18px;
 }
 
-header > nav {
-    padding-top: 25px;
-}
-
-nav ul {
+section ul, nav ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    list-style-type: none;
-    overflow: hidden;
-    height: 1%;
+}
+
+section li, nav li {
+    margin: 0;
+    padding: 0;
+    float: left;
 }
 
 nav li {
-    float: left;
-    margin: 0;
-    padding: 0 34px 0 0;
+    padding-right: 34px;
     text-transform: uppercase;
     font-size: 16px;
     font-family: 'RobotoLight', sans-serif;
 }
 
-nav a {
-    color: #000;
-    text-decoration: none;
+section li {
+    border-right: 1px solid #fff;
 }
 
 #logo {
     display: block;
     text-decoration: none;
-    text-align: left;
+    font-size: 16px;
     font-weight: normal;
-    font-size: 17px;
     font-family: 'RobotoBold', sans-serif;
-    line-height: 18px;
+    line-height: 21px;
     color: #000;
+    background-color: #fff;
 }
 
 #logo > strong {
-    font-weight: normal;
     font-size: 24px;
+    font-weight: normal;
     font-family: 'RobotoLight', sans-serif;
 }
 
-ul.projects {
-    list-style-type: none;
+section h2 {
     margin: 0;
     padding: 0;
-    height: 1%;
-    overflow: hidden;
-}
-
-.projects > li {
-    float: left;
-    margin: 0;
-    padding: 13px;
-    border: 1px solid #fff;
-    border-width: 0 1px 1px 0;
-    background-color: #f5f5f5;
-}
-
-.projects h3 {
-    margin: 8px 0 3px;
     font-size: 16px;
     font-family: 'RobotoBold', sans-serif;
     font-weight: normal;
@@ -100,10 +86,6 @@ aside.images > img {
     margin-bottom: 1px;
 }
 
-article {
-    padding: 13px;
-    background-color: #f5f5f5;
-}
 
 h1 {
     margin: 0;
@@ -128,13 +110,27 @@ dl.meta {
     margin-left: 33%;
 }
 
-.lead, .body {
+.info, .body, .lead {
     font-size: 13px;
     line-height: 18px;
-    width: 34em;
 }
 
-section, article {
+section article {
+    max-width: 400px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #fff;
+}
+
+section h2 {
+    border: 1px solid #fff;
+    border-width: 1px 0;
+    margin: 0;
+    padding: 5px;
+}
+
+section .info p {
+    padding: 5px;
+    margin: 0;
 }
 
 .filter {
@@ -164,44 +160,6 @@ section, article {
 
 .filter strong {
     background-color: #000;
-}
-
-.featured {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    height: 1%;
-    overflow: hidden;
-}
-
-.featured > li {
-    float: left;
-    margin: 0;
-    padding: 13px;
-    background-color: #f5f5f5;
-    border: 1px solid #fff;
-    border-width: 0 1px 1px 0;
-    position: relative;
-}
-
-.featured figure {
-    margin: 0;
-}
-
-.featured h2 {
-    font-size: 21px;
-}
-
-.featured .lead {
-    margin: 0;
-    font-size: 13px;
-}
-
-.featured .lead p {
-    margin: 0;
-}
-
-.kontakt aside {
 }
 
 .kontakt aside > p {

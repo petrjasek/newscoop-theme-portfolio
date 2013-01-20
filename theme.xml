@@ -12,8 +12,7 @@
 	</output>
 
     <renditions>
-        <rendition name="section" width="300" height="300" specs="crop" />
-        <rendition name="front" width="500" height="250" specs="crop" />
-        <rendition name="detail" width="800" height="533" specs="crop" />
+        <rendition name="front" width="400" height="200" specs="crop" />
+        <rendition name="section" width="400" height="400" specs="crop" />
     </renditions>
 </theme>
