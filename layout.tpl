@@ -37,6 +37,7 @@
             <ul class="social pull-right">
                 <li><a href="http://www.facebook.com/AtelierMUN" title="Facebook Atelier MUN"><img src="{{ uri static_file="static/icons/f.png" }}" alt="facebook" width="25" height="25" /></a></li>
                 <li><a href="https://twitter.com/ateliermun" title="Twitter Atelier MUN"><img src="{{ uri static_file="static/icons/t.png" }}" alt="twitter" width="25" height="25" /></a></li>
+                <li><a href="https://plus.google.com/u/1/b/117726848426078907288/117726848426078907288/posts" title="Google+ Atelier MUN"><img src="{{ uri static_file="static/icons/g.png" }}" alt="google+" width="25" height="25" /></a></li>
             </ul>
         </nav>
     </header>
