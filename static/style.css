@@ -123,7 +123,7 @@ section article {
 
 section h2 {
     border: 1px solid #fff;
-    border-width: 1px 0;
+    border-width: 1px 0 0;
     margin: 0;
     padding: 5px;
 }
@@ -171,4 +171,16 @@ section .info p {
 .kontakt aside strong {
     font-weight: normal;
     font-family: 'RobotoBold', sans-serif;
+}
+
+header > nav {
+    position: relative;
+}
+
+nav > .social {
+}
+
+.social > li {
+    margin: 0 0 0 13px;
+    padding: 0;
 }
