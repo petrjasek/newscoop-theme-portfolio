@@ -8,6 +8,7 @@
     <ul>
     {{ /if }}
         <li><article class="featured" itemscope itemtype="http://schem.org/CreativeWork">
+            <span class="date" title="{{ $gimme->article->publish_date|camp_date_format:"%d.%m.%Y" }}">{{ $gimme->article->publish_date|camp_date_format:"%m" }}<span>{{ $gimme->article->publish_date|camp_date_format:"%y" }}</span></span>
             {{ image rendition="front" }}
             <figure>{{ strip }}
                 {{ $closeLink = false }}

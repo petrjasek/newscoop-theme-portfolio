@@ -184,3 +184,23 @@ nav > .social {
     margin: 0 0 0 13px;
     padding: 0;
 }
+
+.featured {
+    position: relative;
+}
+
+.date {
+    position: absolute;
+    top: 0px;
+    right: 13px;
+    display: block;
+    background-color: #000;
+    color: #fff;
+    padding: 3px 5px;
+    opacity: 0.8;
+}
+
+.date > span {
+    display: block;
+    border-top: 1px solid #fff;
+}
