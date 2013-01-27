@@ -15,7 +15,7 @@
 {{ /list_articles }}
 
 {{ else }}
-<aside>
+<aside class="wrap-filters">
     {{ $filters = ['t' => ['projekt', 'realizace', 'soutěž'], 'y' => range(date('Y'), 2009)] }}
     {{ foreach $filters as $param => $options }}
         {{ $query = $smarty.get }}
