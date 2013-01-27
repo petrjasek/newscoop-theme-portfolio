@@ -133,9 +133,13 @@ section .info p {
     margin: 0;
 }
 
-.filter {
+.wrap-filters {
     height: 1%;
     overflow: hidden;
+}
+
+.filter {
+    float: left;
     margin: 0;
     padding: 0 0 8px;
     list-style-type: none;
