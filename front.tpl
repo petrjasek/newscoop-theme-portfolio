@@ -1,7 +1,7 @@
 {{ extends file="./layout.tpl" }}
 
 {{ block content }}
-<section>
+<section class="featured">
     {{ set_section number=4 }}
     {{ list_articles order="bySectionOrder asc" }}
     {{ if $gimme->current_list->at_beginning }}

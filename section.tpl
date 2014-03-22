@@ -4,7 +4,7 @@
 
 {{ block "content" }}
 
-{{ if $gimme->section->url_name == "kontakt" }}
+{{ if in_array($gimme->section->url_name, array('kontakt', 'contact')) }}
 {{ list_articles }}
 <aside class="span3">
     {{ $gimme->article->adresa }}
@@ -17,6 +17,9 @@
 {{ else }}
 <aside class="wrap-filters">
     {{ $filters = ['t' => ['projekt', 'realizace', 'soutěž'], 'y' => range(date('Y'), 2009)] }}
+    {{ if $gimme->language->code == 'en' }}
+        {{ $filters['t'] = ['project', 'realisation', 'competition'] }}
+    {{ /if }}
     {{ foreach $filters as $param => $options }}
         {{ $query = $smarty.get }}
         {{ $query.$param = null }}

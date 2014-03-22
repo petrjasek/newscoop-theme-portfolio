@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>{{ block "title" }}ANDREA KUBNA ARCHITEKT{{ /block }} @ kubna.cz</title>
+    <title>{{ block "title" }}ANDREA JAŠKOVÁ ARCHITEKT{{ /block }} @ kubna.cz</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/bootstrap/css/bootstrap.min.css" }}" />
@@ -10,15 +10,19 @@
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/fonts/stylesheet.css" }}" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/style.css" }}" />
 </head>
-<body class="{{ $gimme->section->url_name|escape }}">
+<body class="{{ $gimme->section->url_name|escape }} projects">
 
 <div class="container-fluid">
     <header class="row-fluid">
         <div class="span3">
+            {{ $architect = 'ARCHITEKT' }}
+            {{ if $gimme->language->code == 'en' }}
+                {{ $architect = 'ARCHITECT' }}
+            {{ /if }}
             {{ if $gimme->section->defined }}
-            <a href="{{ uri options="root_level" }}" id="logo" title="ANDREA KUBNA ARCHITEKT">ANDREA KUBNA<br /><strong>ARCHITEKT</strong></a>
+            <a href="{{ uri options="root_level" }}" id="logo" title="ANDREA JAŠKOVÁ ARCHITEKT">ANDREA JAŠKOVÁ<br /><strong>{{ $architect }}</strong></a>
             {{ else }}
-            <h1 id="logo">ANDREA KUBNA<br /><strong>ARCHITEKT</strong></h1>
+            <h1 id="logo">ANDREA JAŠKOVÁ<br /><strong>{{ $architect }}</strong></h1>
             {{ /if }}
         </div>
         <nav class="span9">
@@ -34,10 +38,19 @@
                 </li>
                 {{ /list_sections }}
             </ul>
+
+            <div id="select-lang">
+                {{ if $gimme->language->code == 'cz' }}
+                <a href="/en/" class="lang">ENGLISH</a>
+                {{ else }}
+                <a href="/" class="lang">ČESKY</a>
+                {{ /if }}
+            </div>
+
             <ul class="social pull-right">
+
                 <li><a href="http://www.facebook.com/AtelierMUN" title="Facebook Atelier MUN"><img src="{{ uri static_file="static/icons/f.png" }}" alt="facebook" width="25" height="25" /></a></li>
-                <li><a href="https://twitter.com/ateliermun" title="Twitter Atelier MUN"><img src="{{ uri static_file="static/icons/t.png" }}" alt="twitter" width="25" height="25" /></a></li>
-                <li><a href="https://plus.google.com/u/1/b/117726848426078907288/117726848426078907288/posts" title="Google+ Atelier MUN"><img src="{{ uri static_file="static/icons/g.png" }}" alt="google+" width="25" height="25" /></a></li>
+                <li><a href="https://twitter.com/ateliermun" title="Twitter Atelier MUN"><img src="{{ uri static_file="static/icons/t.png" }}" alt="twitter" width="25" height="25" /></a></li> <li><a href="https://plus.google.com/u/1/b/117726848426078907288/117726848426078907288/posts" title="Google+ Atelier MUN"><img src="{{ uri static_file="static/icons/g.png" }}" alt="google+" width="25" height="25" /></a></li>
             </ul>
         </nav>
     </header>

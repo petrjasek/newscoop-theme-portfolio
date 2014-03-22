@@ -13,6 +13,7 @@
 
     <renditions>
         <rendition name="front" width="400" height="200" specs="crop" />
-        <rendition name="section" width="400" height="400" specs="crop" />
+        <rendition name="section" width="300" height="300" specs="crop" />
+        <rendition name="publication" width="120" height="150" specs="crop" />
     </renditions>
 </theme>
