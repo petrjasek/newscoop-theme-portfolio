@@ -14,7 +14,7 @@
 </article>
 {{ /list_articles }}
 
-{{ else if $gimme->section->id == 2 }}{{* Reference *}}
+{{ else if in_array($gimme->section->url_name, array('reference')) }}{{* Reference *}}
 <div class="row-fluid">
     <section class="span5 offset3 pubs">
     {{ list_articles order="bySectionOrder asc" constraints="type is publikace" }}
