@@ -14,6 +14,27 @@
 </article>
 {{ /list_articles }}
 
+{{ else if $gimme->section->id == 2 }}{{* Reference *}}
+<div class="row-fluid">
+    <section class="span5 offset3 pubs">
+    {{ list_articles order="bySectionOrder asc" constraints="type is publikace" }}
+    <article class="{{ $gimme->article->type_name|escape }}">
+        {{ include file="refs.tpl" }}
+    </article>
+    {{ /list_articles }}
+    </section>
+</div>
+
+<div class="row-fluid">
+    <section class="span5 offset3 refs">
+    {{ list_articles order="bySectionOrder asc" constraints="type is reference" }}
+    <article class="{{ $gimme->article->type_name|escape }}">
+        {{ include file="refs.tpl" }}
+    </article>
+    {{ /list_articles }}
+    </section>
+</div>
+
 {{ else }}
 <aside class="wrap-filters">
     {{ $filters = ['t' => ['projekt', 'realizace', 'soutěž'], 'y' => range(date('Y'), 2009)] }}

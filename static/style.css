@@ -245,3 +245,18 @@ nav > .social {
     vertical-align: middle;
     margin-right: 5px;
 }
+
+.pubs {
+    margin: 0 0 21px;
+}
+
+.pubs > article {
+    float: left;
+    max-width: 100%;
+}
+
+.refs > article {
+    max-width: 100%;
+    border: none;
+    margin: 0 0 13px;
+}

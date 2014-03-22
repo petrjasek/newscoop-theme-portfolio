@@ -28,7 +28,7 @@
         <nav class="span9">
             <ul>
                 {{ $sectionName = $gimme->section->name }}
-                {{ list_sections constraints="number not 2 number not 3 number not 4" }}{{* ignore frontpage news *}}
+                {{ list_sections constraints="number not 3 number not 4" }}{{* ignore frontpage news *}}
                 <li>
                     {{ if $gimme->section->name == $sectionName && !$gimme->article->defined }}
                     <strong>{{ $gimme->section->name }}</strong>
