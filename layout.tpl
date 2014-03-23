@@ -58,7 +58,9 @@
         {{ block "content" }}{{ /block }}
     </div>
     <footer class="row-fluid">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/cz/" class="pull-right"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/cz/80x15.png" /></a>
+        <div class="pull-right">
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/cz/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/cz/80x15.png" /></a> <span class="newscoop">| Powered by <a href="http://newscoop.sourcefabric.org" title="Powered by Newscoop">Newscoop</a></span>
+        </div>
     </footer>
 </div>
 

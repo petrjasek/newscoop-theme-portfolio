@@ -260,3 +260,8 @@ nav > .social {
     border: none;
     margin: 0 0 13px;
 }
+
+.newscoop {
+    color: #999;
+    font-size: 80%;
+}
