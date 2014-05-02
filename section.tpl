@@ -35,7 +35,7 @@
     </section>
 </div>
 
-{{ else }}
+{{ elseif in_array($gimme->section->url_name, array('projekty', 'projects')) }}
 <aside class="wrap-filters">
     {{ $filters = ['t' => ['projekt', 'realizace', 'soutěž'], 'y' => range(date('Y'), 2009)] }}
     {{ if $gimme->language->code == 'en' }}
@@ -93,6 +93,18 @@
         {{ /list_articles }}
     </ul>
 </section>
+
+{{ else }}
+<div class="row-fluid info">
+        {{ list_articles order="bySectionOrder asc" }}
+        <aside class="span3">
+            {{ $gimme->article->adresa }}
+        </aside>
+        <article class="span8">
+            {{ $gimme->article->cv }}
+        </article>
+        {{ /list_articles }}
+</div>
 {{ /if }}
 
 {{ /block }}

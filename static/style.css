@@ -145,12 +145,13 @@ section .info p {
     margin: 0;
 }
 
-article.span3, article.span8, aside.span3, section.featured { padding-top: 13px; }
+article.span3, article.span8, aside.span3 { padding-top: 13px; }
 
 .wrap-filters {
     height: 1%;
     overflow: hidden;
     padding-top: 13px;
+    display: none;
 }
 
 .filter {
@@ -264,4 +265,17 @@ nav > .social {
 .newscoop {
     color: #999;
     font-size: 80%;
+}
+
+.projects .info ul {
+    list-style-type: square;
+    margin: 0 8px;
+    padding: 0 13px;
+}
+
+.projects .info li {
+    float: none;
+    margin: 0 0 8px;
+    padding: 0;
+    border-right: none;
 }

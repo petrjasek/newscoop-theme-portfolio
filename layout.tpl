@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>{{ block "title" }}ANDREA JAŠKOVÁ ARCHITEKT{{ /block }} @ kubna.cz</title>
+    <title>{{ block "title" }}ANDREA JAŠKOVÁ ARCHITEKT{{ /block }}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/bootstrap/css/bootstrap.min.css" }}" />
@@ -18,15 +18,24 @@
             {{ $architect = 'ARCHITEKT' }}
             {{ if $gimme->language->code == 'en' }}
                 {{ $architect = 'ARCHITECT' }}
+                {{ assign "options" "language" }}
+            {{ else }}
+                {{ assign "options" "root_level" }}
             {{ /if }}
+
             {{ if $gimme->section->defined }}
-            <a href="{{ uri options="root_level" }}" id="logo" title="ANDREA JAŠKOVÁ ARCHITEKT">ANDREA JAŠKOVÁ<br /><strong>{{ $architect }}</strong></a>
+            <a href="{{ uri options=$options }}" id="logo" title="ANDREA JAŠKOVÁ ARCHITEKT">ANDREA JAŠKOVÁ<br /><strong>{{ $architect }}</strong></a>
             {{ else }}
             <h1 id="logo">ANDREA JAŠKOVÁ<br /><strong>{{ $architect }}</strong></h1>
             {{ /if }}
         </div>
         <nav class="span9">
             <ul>
+                <li>
+                    {{ if $gimme->section->defined }}<a href="{{ uri options=$options }}">{{ else }}<strong>{{ /if }}
+                        {{ if $gimme->language->code == 'en' }}News{{ else }}Aktuality{{ /if }}
+                    {{ if $gimme->section->defined }}</a>{{ else }}</strong>{{ /if }}
+                </li>
                 {{ $sectionName = $gimme->section->name }}
                 {{ list_sections constraints="number not 3 number not 4" }}{{* ignore frontpage news *}}
                 <li>
