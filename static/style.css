@@ -123,8 +123,13 @@ dl.meta {
 }
 
 .info, .body, .lead {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 15px;
+    font-family: 'RobotoLight', sans-serif;
+    line-height: 21px;
+}
+
+.body h2 {
+    font-size: 21px;
 }
 
 section article {
