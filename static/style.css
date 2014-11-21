@@ -122,7 +122,7 @@ dl.meta {
     margin-left: 33%;
 }
 
-.info, .body, .lead {
+.info, .body, .projects .lead p {
     font-size: 15px;
     font-family: 'RobotoLight', sans-serif;
     line-height: 21px;
