@@ -1,7 +1,21 @@
+@font-face {
+    font-family: 'NudistaMedium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Nudista Medium'), local('NudistaMedium'), url('./medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'NudistaLight';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Nudista Light'), local('NudistaLight'), url('./light.woff') format('woff');
+}
+
 body {
     color: #000;
     background-color: #f5f5f5;
-    font-family: 'RobotoRegular', sans-serif;
+    font-family: 'NudistaMedium', sans-serif;
 }
 
 a { color: #000; }
@@ -43,7 +57,7 @@ nav li {
     padding-right: 34px;
     text-transform: uppercase;
     font-size: 16px;
-    font-family: 'RobotoLight', sans-serif;
+    font-family: 'NudistaMedium', sans-serif;
 }
 
 section li {
@@ -56,7 +70,7 @@ section li {
     text-align: center;
     font-size: 16px;
     font-weight: normal;
-    font-family: 'RobotoBold', sans-serif;
+    font-family: 'NudistaMedium', sans-serif;
     line-height: 21px;
     color: #000;
     background-color: #fff;
@@ -65,7 +79,7 @@ section li {
 #logo > strong {
     font-size: 24px;
     font-weight: normal;
-    font-family: 'RobotoLight', sans-serif;
+    font-family: 'NudistaMedium', sans-serif;
     letter-spacing: 1.1px;
 }
 
@@ -73,7 +87,7 @@ section h2 {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    font-family: 'RobotoBold', sans-serif;
+    font-family: 'NudistaLight', sans-serif;
     font-weight: normal;
     line-height: 21px;
 }
@@ -82,7 +96,7 @@ section h2 {
     margin: 0;
     color: #414141;
     font-size: 13px;
-    font-family: 'RobotoLight', sans-serif;
+    font-family: 'NudistaMedium', sans-serif;
     line-height: 1.5em;
 }
 
@@ -105,7 +119,7 @@ h1 {
     line-height: 28px;
     font-size: 24px;
     font-weight: normal;
-    font-family: 'RobotoBold', sans-serif;
+    font-family: 'NudistaLight', sans-serif;
 }
 
 dl.meta {
@@ -124,7 +138,7 @@ dl.meta {
 
 .info, .body, .projects .lead p {
     font-size: 15px;
-    font-family: 'RobotoLight', sans-serif;
+    font-family: 'NudistaMedium', sans-serif;
     line-height: 21px;
 }
 
@@ -196,7 +210,7 @@ article.span3, article.span8, aside.span3 { padding-top: 13px; }
 
 .kontakt aside strong {
     font-weight: normal;
-    font-family: 'RobotoBold', sans-serif;
+    font-family: 'NudistaMedium', sans-serif;
 }
 
 header > nav {
@@ -284,3 +298,45 @@ nav > .social {
     padding: 0;
     border-right: none;
 }
+
+.icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.icon * {
+    stroke: #333;
+    stroke-width: 0.3;
+    text-transform: none;
+}
+
+.icon circle {
+    stroke-width: 1 !important;
+}
+
+.icon .in { fill: #333; }
+
+.icon:hover * { stroke: #ffbc00; }
+.icon:hover .in, .icon:hover .in * { fill: #ffbc00; }
+
+.projects .share { margin: 13px 0; list-style-type: none; }
+.projects .share li { display: inline-block; margin: 0 8px 0 0; }
+
+.projects figure {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.projects figure .icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.projects figure .icon * { stroke: #fff; }
+.projects figure .icon path { fill: #fff; }
+
+.projects figure .icon:hover * { stroke: #ffbc00; }
+.projects figure .icon:hover path { fill: #ffbc00; }

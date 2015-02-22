@@ -6,6 +6,14 @@
 <article class="span3" itemscope itemtype="http://schema.org/CreativeWork">
     <h1 itemprop="name">{{ $gimme->article->title|escape }}</h1>
 
+    <ul class="share">
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ include file="self_url.tpl" }}" target="_blank" class="icon">{{ include file="./static/facebook.svg" }}</a></li>
+        <li><a href="https://plus.google.com/share?url={{ include file="self_url.tpl" }}" target="_blank" class="icon">{{ include file="./static/google.svg" }}</a></li>
+        {{ list_article_images length=1 }}
+        <li><a href="https://pinterest.com/pin/create/button/?url={{ include file="self_url.tpl" }}&media={{ urlencode($gimme->image->imageurl) }}" target="_blank" class="icon">{{ include file="./static/pinterest.svg" }}</a></li>
+        {{ /list_article_images }}
+    </ul>
+
     <dl class="meta">
         <dt>{{ $gimme->article->typ|escape }}</dt><dd>{{ $gimme->article->rok|escape }}</dd>
 
@@ -50,7 +58,10 @@
 </article>
 <aside class="images span8">
     {{ list_article_images }}
-    <img src="{{ $gimme->image->imageurl }}" alt="{{ $gimme->image->caption }}" />
+    <figure>
+        <img src="{{ $gimme->image->imageurl }}" alt="{{ $gimme->image->caption }}" />
+        <a href="https://pinterest.com/pin/create/button/?url={{ include file="self_url.tpl" }}&media={{ urlencode($gimme->image->imageurl) }}" target="_blank" class="icon">{{ include file="./static/pinterest.svg" }}</a>
+    </figure>
     {{ /list_article_images }}
 </aside>
 {{ /block }}

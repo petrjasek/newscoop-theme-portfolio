@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/bootstrap/css/bootstrap.min.css" }}" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/bootstrap/css/bootstrap-responsive.min.css" }}" />
-    <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/fonts/stylesheet.css" }}" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/style.css" }}" />
 </head>
 <body class="{{ $gimme->section->url_name|escape }} projects">
@@ -57,8 +56,8 @@
             </div>
 
             <ul class="social pull-right">
-                <li><a href="https://www.facebook.com/andreajaskovaarchitekt" title="Facebook Andrea Jašková Architekt"><img src="{{ uri static_file="static/icons/f.png" }}" alt="facebook" width="25" height="25" /></a></li>
-                <li><a href="https://plus.google.com/116970202686181911525" title="Google+ Andrea Jašková"><img src="{{ uri static_file="static/icons/g.png" }}" alt="google+" width="25" height="25" /></a></li>
+                <li><a href="https://www.facebook.com/andreajaskovaarchitekt" title="Facebook Andrea Jašková Architekt" target="_blank" class="icon">{{ include file="./static/facebook.svg" }}</a></li>
+                <li><a href="https://plus.google.com/116970202686181911525" title="Google+ Andrea Jašková" target="_blank" class="icon">{{ include file="./static/google.svg" }}</a></li>
             </ul>
         </nav>
     </header>
