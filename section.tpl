@@ -94,7 +94,7 @@
     </ul>
 </section>
 
-{{ else }}
+{{ elseif in_array($gimme->section->url_name, array('projekty', 'projects')) }}
 <div class="row-fluid info">
         {{ list_articles order="bySectionOrder asc" }}
         <aside class="span3">
@@ -105,6 +105,15 @@
         </article>
         {{ /list_articles }}
 </div>
+
+{{ else }}
+    {{ list_articles order="bySecionOrder asc" }}
+    <section class="info">
+        <h2>{{ $gimme->article->title|escape }}</h2>
+        <div class="body">{{ $gimme->article->body }}</div>
+    </section>
+    {{ /list_articles }}
+
 {{ /if }}
 
 {{ /block }}

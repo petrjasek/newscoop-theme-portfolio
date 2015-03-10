@@ -1,31 +1,21 @@
 {{ extends file="./layout.tpl" }}
 
 {{ block content }}
-<section class="featured">
-    {{ set_section number=4 }}
-    {{ list_articles order="bySectionOrder asc" }}
-    {{ if $gimme->current_list->at_beginning }}
-    <ul>
-    {{ /if }}
-        <li><article class="featured" itemscope itemtype="http://schem.org/CreativeWork">
-            <span class="date" title="{{ $gimme->article->publish_date|camp_date_format:"%d.%m.%Y" }}">{{ $gimme->article->publish_date|camp_date_format:"%m" }}<span>{{ $gimme->article->publish_date|camp_date_format:"%y" }}</span></span>
+
+<section class="featured">{{ strip }}
+    {{ set_section number=1 }}
+    {{ list_articles order="bySectionOrder asc" length=18 columns=3 }}
+    <article class="featured col-{{ $gimme->current_list->column }}" itemscope itemtype="http://schema.org/CreativeWork">
+        <a href="{{ uri options="article" }}" itemprop="url">
             {{ image rendition="front" }}
-            <figure>{{ strip }}
-                {{ $closeLink = false }}
-                {{ list_related_articles length=1 }}
-                    {{ $closeLink = true }}
-                <a href="{{ uri options="article" }}" title="{{ $gimme->article->title|escape }}">
-                {{ /list_related_articles }}
+            <figure>
                 <img src="{{ $image->src }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="" itemprop="image" />
-                {{ if $closeLink }}</a>{{ /if }}
-            {{ /strip }}</figure>
+            </figure>
             {{ /image }}
+            <div class="lightbox"></div>
             <h2 itemprop="name">{{ $gimme->article->title|escape }}</h2>
-            <div class="info" itemprop="description">{{ $gimme->article->lead }}</div>
-        </article></li>
-    {{ if $gimme->current_list->at_end }}
-    </ul>
-    {{ /if }}
+        </a>
+    </article>
     {{ /list_articles }}
-</section>
+{{ /strip }}</section>
 {{ /block }}

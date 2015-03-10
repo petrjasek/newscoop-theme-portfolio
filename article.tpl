@@ -59,7 +59,7 @@
 <aside class="images span8">
     {{ list_article_images }}
     <figure>
-        <img src="{{ $gimme->image->imageurl }}" alt="{{ $gimme->image->caption }}" />
+        <img src="{{ url options="image width 1200" }}" alt="{{ $gimme->image->caption }}" />
         <a href="https://pinterest.com/pin/create/button/?url={{ include file="self_url.tpl" }}&media={{ urlencode($gimme->image->imageurl) }}" target="_blank" class="icon">{{ include file="./static/pinterest.svg" }}</a>
     </figure>
     {{ /list_article_images }}

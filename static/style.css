@@ -16,6 +16,7 @@ body {
     color: #000;
     background-color: #f5f5f5;
     font-family: 'NudistaMedium', sans-serif;
+    padding: 0 !important;
 }
 
 a { color: #000; }
@@ -24,27 +25,87 @@ img { border: none; }
 
 figure { margin: 0; }
 
+.container-fluid { padding: 51px 0 0 !important; }
+
 header {
-    margin: 0 0 0 -20px;
-    padding: 13px 20px 8px 20px;
-    background-color: #fff;
+    margin: 0;
+    padding: 0 13px;
+    color: #fff;
+    background-color: #000;
     position: relative;
+    border-top: 1px solid #868686;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 50px;
+    z-index: 5000;
+    opacity: 0.8;
+}
+
+footer {
+    color: #fff;
+    background-color: #4e4f4f;
+    box-sizing: border-box;
+    border-top: 1px solid #fff;
+    font-size: 12px;
+}
+
+footer a, footer a:hover {
+    color: #ffd600;
+}
+
+footer .logo { float: left; padding-left: 13px; }
+
+footer .pull-right a i, footer .pull-right a:hover i { color: #fff; text-decoration: none; }
+
+footer .pull-right a {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 13px;
+}
+
+footer .social {
+    text-align: center;
+    margin: 0 25%;
+    padding: 0;
+    list-style-type: none;
+    height: 50px;
+    overflow: hidden;
+}
+
+footer .social li {
+    display: inline-block;
 }
 
 #select-lang {
-    position: absolute;
-    top: -5px;
-    right: 0;
+    float: right;
+    padding-right: 13px;
+    font-size: 90%;
+}
+
+#select-lang a {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 13px;
+    color: #fff;
 }
 
 header nav {
-    padding-top: 18px;
+    padding: 0;
 }
 
 section ul, nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+nav ul {
+    float: left;
+    border-left: 1px solid #313136;
 }
 
 section li, nav li {
@@ -54,33 +115,63 @@ section li, nav li {
 }
 
 nav li {
-    padding-right: 34px;
-    text-transform: uppercase;
-    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
     font-family: 'NudistaMedium', sans-serif;
+    border-right: 1px solid #313136;
+}
+
+nav li a, nav li strong {
+    padding: 0 13px;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    background-color: #000;
+    font-weight: normal;
+}
+
+nav li a:hover, nav li strong, #select-lang a:hover {
+    color: #fff;
+    background-color: #403f44;
+    text-decoration: none;
 }
 
 section li {
     border-right: 1px solid #fff;
 }
 
-#logo {
+.logo {
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: normal;
     font-family: 'NudistaMedium', sans-serif;
-    line-height: 21px;
-    color: #000;
-    background-color: #fff;
+    line-height: 18px;
+    color: #fff;
+    background-color: transparent;
+    padding: 8px 13px 0 0;
+    float: left;
 }
 
-#logo > strong {
-    font-size: 24px;
-    font-weight: normal;
-    font-family: 'NudistaMedium', sans-serif;
-    letter-spacing: 1.1px;
+.logo strong {
+    display: inline-block;
+    font-weight: bold;
+    color: #fff !important;
+    letter-spacing: 5px;
+    text-indent: 3px;
+}
+
+.logo:hover {
+    color: #fff;
+    background-color: inherit;
+    text-decoration: none;
+}
+
+.logo:hover strong {
+    color: #fff;
 }
 
 section h2 {
@@ -165,6 +256,9 @@ section .info p {
 }
 
 article.span3, article.span8, aside.span3 { padding-top: 13px; }
+article.span3, aside.span3 {
+    padding-left: 13px;
+}
 
 .wrap-filters {
     height: 1%;
@@ -218,16 +312,99 @@ header > nav {
 }
 
 nav > .social {
+    float: right;
+}
+
+.social .icon * {
+    stroke: #fff;
+}
+
+.social .icon .in {
+    fill: #fff;
 }
 
 .social > li {
-    margin: 0 0 0 8px;
+    margin: 0;
     padding: 0;
+    height: 50px;
+    overflow: hidden;
 }
+
+.social a {
+    display: inline-block;
+    padding: 10px;
+}
+
+.social a svg { width: 30px; height: 30px; }
 
 .featured {
     position: relative;
 }
+
+section.featured {
+    box-sizing: border-box;
+    padding: 0 0 0 1px;
+    background-color: #fff;
+    border: none;
+    text-align: left;
+    line-height: 1px;
+    margin-right: -1px;
+}
+
+article.featured {
+    display: inline-block;
+    width: 33.33%;
+    height: 200px;
+    min-width: 200px;
+    max-width: 400px;
+    border: 1px solid #fff;;
+    border-width: 1px 1px 0 0;
+    background-color: #333;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.featured a {
+    display: block;
+    position: relative;
+}
+
+.featured h2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding: 13px;
+    color: #fff;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: none;
+    font-size: 1.3em;
+    font-family: 'NudistaLight', sans-serif;
+    text-shadow: 1px 1px 3px #333;
+}
+
+.featured figure {
+    width: 400px;
+    height: 200px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: inline-block;
+}
+
+.featured .lightbox {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.13; 
+}
+
+.featured a:hover .lightbox { opacity: 0.55; }
+.featured a:hover h2 { color: #fff; }
 
 .date {
     position: absolute;
@@ -281,11 +458,6 @@ nav > .social {
     margin: 0 0 13px;
 }
 
-.newscoop {
-    color: #999;
-    font-size: 80%;
-}
-
 .projects .info ul {
     list-style-type: square;
     margin: 0 8px;
@@ -317,8 +489,8 @@ nav > .social {
 
 .icon .in { fill: #333; }
 
-.icon:hover * { stroke: #ffbc00; }
-.icon:hover .in, .icon:hover .in * { fill: #ffbc00; }
+.icon:hover * { stroke: #ffd600; }
+.icon:hover .in, .icon:hover .in * { fill: #ffd600; }
 
 .projects .share { margin: 13px 0; list-style-type: none; }
 .projects .share li { display: inline-block; margin: 0 8px 0 0; }
@@ -340,3 +512,49 @@ nav > .social {
 
 .projects figure .icon:hover * { stroke: #ffbc00; }
 .projects figure .icon:hover path { fill: #ffbc00; }
+
+section.info {
+    text-align: center;
+    background-color: #fff;
+    padding: 34px;
+}
+
+.info h2 {
+    font-size: 34px;
+    margin-bottom: 21px;
+}
+
+.info .body {
+}
+
+.info .body p {
+    max-width: 30em;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+@media (max-width: 800px) {
+    article.featured {
+        width: 50%;
+    }
+
+    nav li a {
+        padding: 0 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    article.featured {
+        width: 100%;
+    }
+
+    nav li a {
+        height: 21px;
+        line-height: 21px;
+    }
+
+    footer .social {
+        margin: 0 5px;
+        clear: both;
+    }
+}

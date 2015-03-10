@@ -1,63 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+{{ $architect = 'ARCHITEKT' }}
+{{ if $gimme->language->code == 'en' }}
+    {{ $architect = 'ARCHITECT' }}
+    {{ assign "options" "language" }}
+{{ else }}
+    {{ assign "options" "root_level" }}
+{{ /if }}
+
 <head>
     <meta charset="utf-8" />
-    <title>{{ block "title" }}ANDREA JAŠKOVÁ ARCHITEKT{{ /block }}</title>
+    <title>{{ block "title" }}ANDREA JAŠKOVÁ {{ $architect }}{{ /block }}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/bootstrap/css/bootstrap.min.css" }}" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/bootstrap/css/bootstrap-responsive.min.css" }}" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/style.css" }}" />
 </head>
+
 <body class="{{ $gimme->section->url_name|escape }} projects">
 
 <div class="container-fluid">
     <header class="row-fluid">
-        <div class="span3">
-            {{ $architect = 'ARCHITEKT' }}
-            {{ if $gimme->language->code == 'en' }}
-                {{ $architect = 'ARCHITECT' }}
-                {{ assign "options" "language" }}
-            {{ else }}
-                {{ assign "options" "root_level" }}
-            {{ /if }}
+        
+        {{ if $gimme->section->defined }}
+        <a href="{{ uri options=$options }}" rel="home" class="logo" title="ANDREA JAŠKOVÁ {{ $architect }}">ANDREA JAŠKOVÁ<br /><strong>{{ $architect }}</strong></a>
+        {{ else }}
+        <h1 class="logo">ANDREA JAŠKOVÁ<br /><strong>{{ $architect }}</strong></h1>
+        {{ /if }}
 
-            {{ if $gimme->section->defined }}
-            <a href="{{ uri options=$options }}" id="logo" title="ANDREA JAŠKOVÁ ARCHITEKT">ANDREA JAŠKOVÁ<br /><strong>{{ $architect }}</strong></a>
-            {{ else }}
-            <h1 id="logo">ANDREA JAŠKOVÁ<br /><strong>{{ $architect }}</strong></h1>
-            {{ /if }}
-        </div>
-        <nav class="span9">
+        <nav>
+            <div id="select-lang">
+                {{ if $gimme->language->code == 'cz' }}
+                <a href="/en/" rel="home" lang="en" class="lang" title="switch to english">english</a>
+                {{ else }}
+                <a href="/" rel="home" lang="cs" class="lang" title="zobrazit česky">česky</a>
+                {{ /if }}
+            </div>
+
             <ul>
-                <li>
-                    {{ if $gimme->section->defined }}<a href="{{ uri options=$options }}">{{ else }}<strong>{{ /if }}
-                        {{ if $gimme->language->code == 'en' }}News{{ else }}Aktuality{{ /if }}
-                    {{ if $gimme->section->defined }}</a>{{ else }}</strong>{{ /if }}
-                </li>
                 {{ $sectionName = $gimme->section->name }}
                 {{ list_sections constraints="number not 3 number not 4" }}{{* ignore frontpage news *}}
                 <li>
                     {{ if $gimme->section->name == $sectionName && !$gimme->article->defined }}
                     <strong>{{ $gimme->section->name }}</strong>
                     {{ else }}
-                    <a href="{{ uri options="section" }}">{{ $gimme->section->name }}</a>
+                    <a href="{{ uri options="section" }}" title="{{ $gimme->section->name }}">{{ $gimme->section->name }}</a>
                     {{ /if }}
                 </li>
                 {{ /list_sections }}
-            </ul>
-
-            <div id="select-lang">
-                {{ if $gimme->language->code == 'cz' }}
-                <a href="/en/" class="lang">ENGLISH</a>
-                {{ else }}
-                <a href="/" class="lang">ČESKY</a>
-                {{ /if }}
-            </div>
-
-            <ul class="social pull-right">
-                <li><a href="https://www.facebook.com/andreajaskovaarchitekt" title="Facebook Andrea Jašková Architekt" target="_blank" class="icon">{{ include file="./static/facebook.svg" }}</a></li>
-                <li><a href="https://plus.google.com/116970202686181911525" title="Google+ Andrea Jašková" target="_blank" class="icon">{{ include file="./static/google.svg" }}</a></li>
             </ul>
         </nav>
     </header>
@@ -65,9 +56,17 @@
         {{ block "content" }}{{ /block }}
     </div>
     <footer class="row-fluid">
+        <div class="logo">ANDREA JAŠKOVÁ<br /><strong>{{ $architect }}</strong></div>
+
         <div class="pull-right">
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/cz/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/cz/80x15.png" /></a> <span class="newscoop">| Powered by <a href="http://newscoop.sourcefabric.org" title="Powered by Newscoop">Newscoop</a></span>
+            <a rel="license" class="license" href="http://creativecommons.org/licenses/by-sa/3.0/cz/" title="creative commons license">(CC)</a>
+            <a href="http://newscoop.sourcefabric.org" title="Powered by Newscoop">Newscoop</a>
         </div>
+
+        <ul class="social">{{ strip }}
+            <li><a href="https://www.facebook.com/andreajaskovaarchitekt" title="Andrea Jašková {{ $architect|lower }} @ Facebook" target="_blank" class="icon">{{ include file="./static/facebook.svg" }}</a></li>
+            <li><a href="https://plus.google.com/116970202686181911525" title="Andrea Jašková {{ $architect|lower }} @ Google+" target="_blank" class="icon">{{ include file="./static/google.svg" }}</a></li>
+        {{ /strip }}</ul>
     </footer>
 </div>
 
