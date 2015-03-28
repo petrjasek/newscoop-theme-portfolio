@@ -109,8 +109,16 @@
 {{ else }}
     {{ list_articles order="bySecionOrder asc" }}
     <section class="info">
-        <h2>{{ $gimme->article->title|escape }}</h2>
-        <div class="body">{{ $gimme->article->body }}</div>
+        {{ list_article_images length=1 }}
+        <figure>
+            <img src="{{ $gimme->image->imageurl }}" alt="" />
+            <div class="lightbox"></div>
+        </figure>
+        {{ /list_article_images }}
+        <div class="content">
+            <h2>{{ $gimme->article->title|escape }}</h2>
+            <div class="body">{{ $gimme->article->body }}</div>
+        </div>
     </section>
     {{ /list_articles }}
 
