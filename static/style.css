@@ -14,7 +14,7 @@
 
 body {
     color: #000;
-    background-color: #f5f5f5;
+    background-color: #4e4f4f;
     font-family: 'NudistaMedium', sans-serif;
     padding: 0 !important;
 }
@@ -34,6 +34,7 @@ header {
     background-color: #000;
     position: relative;
     border-top: 1px solid #868686;
+    border-bottom: 1px solid #fff;
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -48,7 +49,9 @@ footer {
     background-color: #4e4f4f;
     box-sizing: border-box;
     border-top: 1px solid #fff;
+    margin-top: -1px;
     font-size: 12px;
+    display: block;
 }
 
 footer a, footer a:hover {
@@ -258,6 +261,7 @@ section .info p {
 article.span3, article.span8, aside.span3 { padding-top: 13px; }
 article.span3, aside.span3 {
     padding-left: 13px;
+    background-color: #fff;
 }
 
 .wrap-filters {
@@ -343,22 +347,19 @@ nav > .social {
 
 section.featured {
     box-sizing: border-box;
-    padding: 0 0 0 1px;
-    background-color: #fff;
-    border: none;
+    padding: 0;
+    border-left: 1px solid #fff;
     text-align: left;
     line-height: 1px;
-    margin-right: -1px;
 }
 
 article.featured {
     display: inline-block;
     width: 33.33%;
-    height: 200px;
     min-width: 200px;
-    max-width: 400px;
-    border: 1px solid #fff;;
-    border-width: 1px 1px 0 0;
+    max-width: 600px;
+    border: 1px solid #fff;
+    border-width: 0 1px 1px 0;
     background-color: #333;
     box-sizing: border-box;
     overflow: hidden;
@@ -371,36 +372,25 @@ article.featured {
 
 .featured h2 {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    padding: 13px;
-    color: #fff;
-    background-color: transparent;
     width: 100%;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    color: #fff;
     box-sizing: border-box;
     border-top: none;
-    font-size: 1.3em;
+    font-size: 21px;
+    line-height: 34px;
     font-family: 'NudistaLight', sans-serif;
-    text-shadow: 1px 1px 3px #333;
 }
 
-.featured figure {
+.featured figures {
     width: 400px;
     height: 200px;
     top: 0;
     left: 0;
     position: absolute;
     display: inline-block;
-}
-
-.featured .lightbox {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    opacity: 0.13; 
 }
 
 .featured a:hover .lightbox { opacity: 0.55; }
@@ -489,7 +479,7 @@ article.featured {
 
 .icon .in { fill: #333; }
 
-.icon:hover * { stroke: #ffd600; }
+.icon:hover circle, .icon:hover * { stroke: #ffd600; }
 .icon:hover .in, .icon:hover .in * { fill: #ffd600; }
 
 .projects .share { margin: 13px 0; list-style-type: none; }
@@ -499,6 +489,11 @@ article.featured {
     position: relative;
     margin: 0;
     padding: 0;
+}
+
+.projects aside.images figure {
+    border: 1px solid #fff;
+    border-width: 0 1px 1px;
 }
 
 .projects figure .icon {
@@ -517,7 +512,6 @@ section.info {
     text-align: center;
     background-color: #fff;
     position: relative;
-    border-top: 1px solid #fff;
     min-height: 200px;
 }
 
@@ -543,54 +537,76 @@ section.info {
 }
 
 .info h2 {
-    font-size: 34px;
+    font-size: 50px;
+    line-height: 55px;
     margin-bottom: 21px;
     border-top: none;
     display: inline-block;
     vertical-align: middle;
 }
 
-.info .body {
+.body {
+    padding: 13px;
 }
 
-.info .body p {
-    max-width: 1000px;
+.blog .body { background-color: #fff; }
+
+.body p {
+    max-width: 60em;
     min-width: 320px;
-    margin: 0 auto;
+    margin: 0 auto 0.8em;
     font-size: 15px;
 }
 
-@media (max-width: 2800px) {
-    article.featured {
-        width: 14.28%;
-    }
+/* refs */
+section.span5.offset3 {
 }
 
-@media (max-width: 2400px) {
-    article.featured {
-        width: 16.66%;
-    }
+article.reference {
+    background-color: transparent;
 }
 
-@media (max-width: 2000px) {
-    article.featured {
-        width: 20%;
-    }
+.panel {
+    position: relative;
+    border-bottom: 1px solid #fff;
+    background-color: #333;
+    min-height: 240px;
+    color: #fff;
 }
 
-@media (max-width: 1600px) {
-    article.featured {
-        width: 25%;
-    }
+.panel .content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
 }
+
+.panel figure {
+}
+
+.panel figure.top {
+}
+
+.panel h1, .panel h2 {
+    font-size: 50px;
+    font-weight: normal;
+    font-family: 'NudistaLight', sans-serif;
+    color: inherit;
+    /*text-shadow: 1px 1px 3px #efefef;*/
+}
+
+.panel .abs {
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+.panel .share { margin: 21px 0; }
+.panel .icon, .panel .icon svg { width: 50px; height: 50px; }
+.panel .icon * { stroke: #fff; }
+.panel .icon .in { fill: #fff; }
+.panel .icon .in * { stroke: #fff; }
 
 @media (max-width: 1200px) {
-    article.featured {
-        width: 33.33%;
-    }
-}
-
-@media (max-width: 800px) {
     article.featured {
         width: 50%;
     }
@@ -600,7 +616,13 @@ section.info {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
+    .panel .content {
+        top: 25%;
+    }
+}
+
+@media (max-width: 600px) {
     article.featured {
         width: 100%;
     }

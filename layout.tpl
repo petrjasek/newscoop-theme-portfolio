@@ -40,9 +40,9 @@
 
             <ul>
                 {{ $sectionName = $gimme->section->name }}
-                {{ list_sections constraints="number not 3 number not 4" }}{{* ignore frontpage news *}}
+                {{ list_sections constraints="number not 4 number not 2" }}{{* ignore frontpage news *}}
                 <li>
-                    {{ if $gimme->section->name == $sectionName && !$gimme->article->defined }}
+                    {{ if $gimme->section->name == $sectionName && !$gimme->article->defined && false }}
                     <strong>{{ $gimme->section->name }}</strong>
                     {{ else }}
                     <a href="{{ uri options="section" }}" title="{{ $gimme->section->name }}">{{ $gimme->section->name }}</a>
