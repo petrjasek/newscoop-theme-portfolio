@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/bootstrap/css/bootstrap.min.css" }}" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/bootstrap/css/bootstrap-responsive.min.css" }}" />
     <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/style.css" }}" />
+
 </head>
 
 <body class="{{ $gimme->section->url_name|escape }} projects">
@@ -38,7 +39,9 @@
                 {{ /if }}
             </div>
 
-            <ul>
+            <button id="burger"></button>
+
+            <ul id="nav-menu">
                 {{ $sectionName = $gimme->section->name }}
                 {{ list_sections constraints="number not 4 number not 2" }}{{* ignore frontpage news *}}
                 <li>
@@ -70,7 +73,6 @@
     </footer>
 </div>
 
-{{ if $smarty.server.HTTP_HOST !== 'kubna.local' }}
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -84,7 +86,14 @@
   })();
 
 </script>
-{{ /if }}
+
+<script>
+    var btn = document.getElementById('burger'),
+        menu = document.getElementById('nav-menu');
+    btn.addEventListener('click', function() {
+        menu.classList.toggle('show');
+    });
+</script>
 
 </body>
 </html>
