@@ -10,13 +10,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>{{ block "title" }}ANDREA JAŠKOVÁ {{ $architect }}{{ /block }}</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/bootstrap/css/bootstrap.min.css" }}" />
-    <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/bootstrap/css/bootstrap-responsive.min.css" }}" />
-    <link rel="stylesheet" type="text/css" href="{{ uri static_file="static/style.css" }}" />
-
+    <title>{{ block "title" }}ANDREA JAŠKOVÁ {{ $architect }}{{ /block }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ uri static_file="dist/build-71fd7af7.css" }}" />
 </head>
 
 <body class="{{ $gimme->section->url_name|escape }} projects">
